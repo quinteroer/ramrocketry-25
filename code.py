@@ -84,28 +84,14 @@ def read_hts221():
 
 def startup():
     print("Starting in 5", end="")
-    time.sleep(1)
-    write = sys.stdout.write
-    write("\b \b")
-    print("4", end="")
-    time.sleep(1)
-    write = sys.stdout.write
-    write("\b \b")
-    print("3", end="")
-    time.sleep(1)
-    write = sys.stdout.write
-    write("\b \b")
-    print("2", end="")
-    time.sleep(1)
-    write = sys.stdout.write
-    write("\b \b")
-    print("1", end="")
-    time.sleep(1)
-    write = sys.stdout.write
-    write("\b \b")
+    for i in range(4, -1, -1):
+        time.sleep(1)
+        write = sys.stdout.write
+        write("\b \b")
+        print(i, end="")
+    
     for i in range(1, 6):
         print("")
-
 
 def main():
     print(board.board_id)
